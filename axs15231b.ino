@@ -6,6 +6,16 @@
 #include "lv_port.h"
 
 /**
+ * Set the rotation degree:
+ *      - 0: 0 degree
+ *      - 90: 90 degree
+ *      - 180: 180 degree
+ *      - 270: 270 degree
+ *
+ */
+#define LVGL_PORT_ROTATION_DEGREE               (90)
+
+/**
 /* To use the built-in examples and demos of LVGL uncomment the includes below respectively.
  * You also need to copy `lvgl/examples` to `lvgl/src/examples`. Similarly for the demos `lvgl/demos` to `lvgl/src/demos`.
  */
@@ -19,19 +29,17 @@ void setup()
     Serial.begin(115200);
     Serial.println(title + " start");
 
-    delay(3000);
-
     Serial.println("Initialize panel device");
     bsp_display_cfg_t cfg = {
         .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
         .buffer_size = EXAMPLE_LCD_QSPI_H_RES * EXAMPLE_LCD_QSPI_V_RES,
-#if CONFIG_EXAMPLE_DISPLAY_ROTATION_90
+#if LVGL_PORT_ROTATION_DEGREE == 90
         .rotate = LV_DISP_ROT_90,
-#elif CONFIG_EXAMPLE_DISPLAY_ROTATION_270
+#elif LVGL_PORT_ROTATION_DEGREE == 270
         .rotate = LV_DISP_ROT_270,
-#elif CONFIG_EXAMPLE_DISPLAY_ROTATION_180
+#elif LVGL_PORT_ROTATION_DEGREE == 180
         .rotate = LV_DISP_ROT_180,
-#elif CONFIG_EXAMPLE_DISPLAY_ROTATION_0
+#elif LVGL_PORT_ROTATION_DEGREE == 0
         .rotate = LV_DISP_ROT_NONE,
 #endif
     };
