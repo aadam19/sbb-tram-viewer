@@ -261,7 +261,7 @@ esp_err_t bsp_display_new(const bsp_display_config_t *config, esp_lcd_panel_hand
 
     esp_lcd_panel_reset(*ret_panel);
     esp_lcd_panel_init(*ret_panel);
-    esp_lcd_panel_disp_on_off(*ret_panel, true);
+    esp_lcd_panel_disp_on_off(*ret_panel, false);
 
     if (config->tear_cfg.te_gpio_num > 0) {
 

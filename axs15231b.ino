@@ -19,6 +19,8 @@ void setup()
     Serial.begin(115200);
     Serial.println(title + " start");
 
+    delay(3000);
+
     Serial.println("Initialize panel device");
     bsp_display_cfg_t cfg = {
         .lvgl_port_cfg = ESP_LVGL_PORT_INIT_CONFIG(),
