@@ -9,7 +9,7 @@
 /* To use the built-in examples and demos of LVGL uncomment the includes below respectively.
  * You also need to copy `lvgl/examples` to `lvgl/src/examples`. Similarly for the demos `lvgl/demos` to `lvgl/src/demos`.
  */
-// #include <demos/lv_demos.h>
+#include <demos/lv_demos.h>
 // #include <examples/lv_examples.h>
 
 void setup()
@@ -43,11 +43,6 @@ void setup()
     /* Lock the mutex due to the LVGL APIs are not thread-safe */
     bsp_display_lock(0);
 
-    /* Create a simple label */
-    lv_obj_t *label = lv_label_create(lv_scr_act());
-    lv_label_set_text(label, title.c_str());
-    lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-
     /**
      * Try an example. Don't forget to uncomment header.
      * See all the examples online: https://docs.lvgl.io/master/examples.html
@@ -59,10 +54,10 @@ void setup()
      * Or try out a demo.
      * Don't forget to uncomment header and enable the demos in `lv_conf.h`. E.g. `LV_USE_DEMOS_WIDGETS`
      */
-    // lv_demo_widgets();
-    // lv_demo_benchmark();
+//     lv_demo_widgets();
+//     lv_demo_benchmark();
     // lv_demo_music();
-    // lv_demo_stress();
+    lv_demo_stress();
 
     /* Release the mutex */
     bsp_display_unlock();
