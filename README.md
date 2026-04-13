@@ -109,3 +109,11 @@ Current workflow:
 Regenerate `stations_data.h` from source JSON when dataset changes:
 - filter canton as needed,
 - keep fields used by `station_t` in `ui.cpp`.
+
+## Screenshots
+
+![Clock Screen](photos/WhatsApp%20Image%202026-04-13%20at%2011.22.51.jpeg)
+
+![Station Search Screen](photos/WhatsApp%20Image%202026-04-13%20at%2011.22.52.jpeg)
+
+![Departures Screen](photos/WhatsApp%20Image%202026-04-13%20at%2011.22.53.jpeg)
